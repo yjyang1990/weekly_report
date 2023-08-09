@@ -36,15 +36,6 @@ export default function Header() {
       }
 
       </div>
-      <script>
-      var _hmt = _hmt || [];
-      (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?c3d32621525310412f04cbf6d0d10dce";
-        var s = document.getElementsByTagName("script")[0]; 
-        s.parentNode.insertBefore(hm, s);
-      })();
-      </script>
 
     </header>
   );
