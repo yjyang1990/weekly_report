@@ -32,6 +32,7 @@ export async function OpenAIStream(payload: OpenAIStreamPayload) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
   var keys = process.env.OPENAI_API_KEY || "";
+  var host = process.env.OPENAI_API_HOST || "https://api.openai.com";
   const apikeys = keys?.split(",");
   const randomNumber = randomNumberInRange(0, apikeys.length - 1);
   const newapikey = apikeys[randomNumber];
@@ -54,7 +55,7 @@ export async function OpenAIStream(payload: OpenAIStreamPayload) {
   }
   delete payload.api_key
 
-  const res = await fetch("https://api.openai.com/v1/chat/completions", {
+  const res = await fetch(host + "/v1/chat/completions", {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${openai_api_key ?? ""}`,
